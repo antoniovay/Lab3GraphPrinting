@@ -8,6 +8,7 @@ CONFIG += c++17 cmdline
 
 SOURCES += \
         ApplicationWindow.cpp \
+        DataExtract.cpp \
         JsonParser.cpp \
         ioc_container.cpp \
         main.cpp
@@ -19,6 +20,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     ApplicationWindow.h \
+    DataExtract.h \
     DataModel.h \
     IChartView.h \
     IParser.h \
