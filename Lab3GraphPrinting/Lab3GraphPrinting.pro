@@ -11,6 +11,7 @@ SOURCES += \
         DataExtract.cpp \
         DependencyInversion.cpp \
         JsonParser.cpp \
+        MainController.cpp \
         SqlLiteParser.cpp \
         ioc_container.cpp \
         main.cpp
@@ -33,6 +34,7 @@ HEADERS += \
     IParser.h \
     JsonParser.h \
     LineChartCreator.h \
+    MainController.h \
     ScatterChartCreator.h \
     SplineChartCreator.h \
     SqlLiteParser.h \
