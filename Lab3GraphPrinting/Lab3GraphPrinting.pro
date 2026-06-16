@@ -20,6 +20,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
+    AbstractChartCreator.h \
     AbstractParser.h \
     ApplicationWindow.h \
     DataExtract.h \
