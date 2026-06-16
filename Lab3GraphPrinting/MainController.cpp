@@ -1,3 +1,3 @@
 #include "MainController.h"
 
-MainController::MainController() {}
+const QStringList MainController::FILE_TYPES = {"json", "sqlite"};
