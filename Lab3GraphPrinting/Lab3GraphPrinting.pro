@@ -10,6 +10,7 @@ SOURCES += \
         ApplicationWindow.cpp \
         DataExtract.cpp \
         JsonParser.cpp \
+        SqlLiteParser.cpp \
         ioc_container.cpp \
         main.cpp
 
@@ -27,4 +28,5 @@ HEADERS += \
     IChartView.h \
     IParser.h \
     JsonParser.h \
+    SqlLiteParser.h \
     ioc_container.h
