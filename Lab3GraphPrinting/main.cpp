@@ -1,19 +1,40 @@
-#include <QCoreApplication>
+#include "ApplicationWindow.h"
 
-int main(int argc, char *argv[])
-{
-    QCoreApplication a(argc, argv);
+#include <QApplication>
 
-    // Set up code that uses the Qt event loop here.
-    // Call QCoreApplication::quit() or QCoreApplication::exit() to quit the application.
-    // A not very useful example would be including
-    // #include <QTimer>
-    // near the top of the file and calling
-    // QTimer::singleShot(5000, &a, &QCoreApplication::quit);
-    // which quits the application after 5 seconds.
+#include <QDebug>
 
-    // If you do not need a running Qt event loop, remove the call
-    // to QCoreApplication::exec() or use the Non-Qt Plain C++ Application template.
+#include "DataExtract.h"
+#include "MainController.h"
+#include "DependencyInversion.h"
 
-    return QCoreApplication::exec();
+int main(int argc, char *argv[]) {
+    QApplication a(argc, argv);
+
+    GraphDataExtracter extracter;
+    DataModel dataModel;
+    ApplicationWindow mainWindow;
+
+    DIConfiguration::configure();
+
+    MainController* controller = &MainController::instance();
+    controller->setDataExtracter(&extracter);
+    controller->setDataModel(&dataModel);
+    controller->setView(&mainWindow);
+
+    mainWindow.show();
+
+    QObject::connect(&mainWindow, &ApplicationWindow::fileSelected,
+                     controller, &MainController::onFileSelected);
+
+    QObject::connect(&mainWindow, &ApplicationWindow::chartsTypeChanged,
+                     controller, &MainController::onDataChanged);
+
+    QObject::connect(&mainWindow, &ApplicationWindow::redisplayChart,
+                     controller, &MainController::onDataChanged);
+
+    QObject::connect(&dataModel, &DataModel::dataChanged,
+                     controller, &MainController::onDataChanged);
+
+    return a.exec();
 }
