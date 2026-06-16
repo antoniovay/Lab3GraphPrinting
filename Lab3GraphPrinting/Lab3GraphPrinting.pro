@@ -9,6 +9,7 @@ CONFIG += c++17 cmdline
 SOURCES += \
         ApplicationWindow.cpp \
         DataExtract.cpp \
+        DependencyInversion.cpp \
         JsonParser.cpp \
         SqlLiteParser.cpp \
         ioc_container.cpp \
@@ -26,6 +27,7 @@ HEADERS += \
     AreaChartCreator.h \
     DataExtract.h \
     DataModel.h \
+    DependencyInversion.h \
     IChartCreator.h \
     IChartView.h \
     IParser.h \
