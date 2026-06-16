@@ -23,6 +23,7 @@ HEADERS += \
     ApplicationWindow.h \
     DataExtract.h \
     DataModel.h \
+    IChartCreator.h \
     IChartView.h \
     IParser.h \
     JsonParser.h \
