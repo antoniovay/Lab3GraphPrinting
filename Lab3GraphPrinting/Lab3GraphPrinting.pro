@@ -8,6 +8,7 @@ CONFIG += c++17 cmdline
 
 SOURCES += \
         ApplicationWindow.cpp \
+        JsonParser.cpp \
         ioc_container.cpp \
         main.cpp
 
@@ -21,4 +22,5 @@ HEADERS += \
     DataModel.h \
     IChartView.h \
     IParser.h \
+    JsonParser.h \
     ioc_container.h
