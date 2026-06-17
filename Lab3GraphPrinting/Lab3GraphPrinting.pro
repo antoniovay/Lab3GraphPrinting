@@ -1,4 +1,6 @@
-QT = core
+QT       += core gui sql widgets
+QT       += charts
+
 
 CONFIG += c++17 cmdline
 
